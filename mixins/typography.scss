@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Alumni+Sans+Pinstripe&display=swap');
+
+$ar : 'Alumni Sans Pinstripe', sans-serif;
+
+@function px($px) {
+  @return $px * 0.1rem;
+}
+
+@mixin font-props($size, $letter-spacing, $line-height) {
+  font-size: px($size);
+  letter-spacing: #{$letter-spacing}em;
+  line-height: #{$line-height}em;
+}
+
+@mixin ar-regular($size : 10, $letter-spacing: 0, $line-height: 0){
+  @include font-props($size, $letter-spacing, $line-height);
+  font-family: $ar;
+  font-weight: 300;
+  font-style: normal;
+}
