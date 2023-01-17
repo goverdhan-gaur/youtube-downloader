@@ -1,25 +1,43 @@
+import { useRouter } from 'next/router.js';
+import { useClipboard } from '../../../utils/useClipboard.js';
 import * as Styled from './Homepage.styled.js';
+import propTypes from 'prop-types'
+import SearchResults from '../SearchResults/SearchResults.jsx';
+import _ from 'lodash';
 
-/**
- * Define prop types
- * { example : proptypes.string }
- */
 Homepage.propTypes = {
-  //
+  data: propTypes.object
 };
 
-/**
- * Default Props for the component
- * { example : 'value' }
- */
+
 Homepage.defaultProps = {
-  //
+  data : {}
 };
 
-export default function Homepage(props) {
+
+export default function Homepage({data}) {
+
+  const getClipBoardText = useClipboard();
+  const router = useRouter();
+  
+  const searchData = _.get(data, 'youtubeInfo', null)
+  const handlePaste = async (e) => {
+    const clipBoardtext = await getClipBoardText();
+    router.push(`?url=${clipBoardtext}`);
+  };
+  console.info(searchData)
+  
   return (
     <Styled.Wrapper >
-      Hello World !!
+      {
+        searchData ? 
+        <SearchResults data={searchData} /> : (
+        <>
+          <Styled.Textarea autoFocus={true} name="" id="" cols="30" rows="10" onPaste={handlePaste}></Styled.Textarea>
+          <Styled.Heading> Please paste the link here.</Styled.Heading>
+        </>  
+        )
+      }
     </Styled.Wrapper>
-  );
+  );s
 }
