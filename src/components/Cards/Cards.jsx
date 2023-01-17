@@ -40,8 +40,6 @@ const filterArrayAudio = (array) => {
 
 // return  id !== array.length + 1 || val.filesize < array[(id + 1)].filesize 
 export default function Cards({data}) {
- 
-  console.info(filterArrayAudio(data))
   return (
     <Styled.Wrapper>
       <Styled.Section>
