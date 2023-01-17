@@ -1,7 +1,6 @@
 import propTypes from 'prop-types';
 import * as Styled from './Card.styled.js';
 import filesize from 'file-size';
-import saveFileByUrl from 'save-file-by-url';
 // import download from 'video-downloader';
 /**
  * Define prop types
@@ -32,7 +31,7 @@ export default function Card({content}){
         fixed: 2,
         spacer: ' '
       }).human('jedec')}
-  <a href={content.url} download="download" target="_blank">Downlload</a>
+  <a href={content.url} download="download" rel="noreferrer" target="_blank">Downlload</a>
     </Styled.Wrapper>
   );
 }

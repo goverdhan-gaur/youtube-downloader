@@ -21,7 +21,7 @@ export default function Homepage({data}) {
   const router = useRouter();
   
   const searchData = _.get(data, 'youtubeInfo', null)
-  const handlePaste = async (e) => {
+  const handlePaste = async () => {
     const clipBoardtext = await getClipBoardText();
     router.push(`?url=${clipBoardtext}`);
   };
@@ -39,5 +39,5 @@ export default function Homepage({data}) {
         )
       }
     </Styled.Wrapper>
-  );s
+  );
 }

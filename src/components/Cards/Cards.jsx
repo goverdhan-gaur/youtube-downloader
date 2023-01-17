@@ -18,17 +18,17 @@ Cards.propTypes = {
   //
   data: []
 }
-const filterArrayVideos = (array) => {
-    const Videos = array.filter((val, id, array) => 
-    val.format_note !== 'storyboard' 
-    && val.filesize !== null 
-    && val.ext === 'mp4' 
-    // && val.fps > 24 
-    // && val.filesize > array[id+1].filesize
-    && val.asr !== null
-    );
-    return Videos
-}
+// const filterArrayVideos = (array) => {
+//     const Videos = array.filter((val) => 
+//     val.format_note !== 'storyboard' 
+//     && val.filesize !== null 
+//     && val.ext === 'mp4' 
+//     // && val.fps > 24 
+//     // && val.filesize > array[id+1].filesize
+//     && val.asr !== null
+//     );
+//     return Videos
+// }
 
 const filterArrayAudio = (array) => {
   const Videos = array.filter((val) => 
@@ -47,18 +47,18 @@ export default function Cards({data}) {
           MP3
         </Styled.Heading>
         <Styled.AudioFiles>
-          {filterArrayAudio(data).map((item) => <Card content={item}></Card>)}
+          {filterArrayAudio(data).map((item, index) => <Card key={index} content={item}></Card>)}
         </Styled.AudioFiles>
       </Styled.Section>
 
-      <Styled.Section>
+      {/* <Styled.Section>
       <Styled.Heading>
           MP4
         </Styled.Heading>
       <Styled.VideoFiles>
-        {filterArrayVideos(data).map((item) => <Card content={item}></Card>)}
+        {filterArrayVideos(data).map((item, index) => <Card key={index}content={item}></Card>)}
       </Styled.VideoFiles>
-      </Styled.Section>
+      </Styled.Section> */}
     </Styled.Wrapper>
   );
 }
