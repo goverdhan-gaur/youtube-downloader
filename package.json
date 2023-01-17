@@ -16,8 +16,13 @@
   },
   "dependencies": {
     "capitalize-first-letter": "^1.0.0",
+    "download-url": "^2.0.3",
+    "file-size": "^1.0.0",
     "fs": "^0.0.1-security",
     "husky": "^8.0.1",
+    "is-youtube-url": "^1.0.5",
+    "js-file-download": "^0.4.12",
+    "lodash": "^4.17.21",
     "minimist": "^1.2.6",
     "next": "12.2.5",
     "prop-types": "^15.8.1",
@@ -25,8 +30,14 @@
     "react-device-detect": "^2.2.2",
     "react-dom": "18.2.0",
     "sass": "^1.54.5",
+    "save-file-by-url": "^0.4.2",
     "storybook": "^6.5.10",
-    "styled-components": "^5.3.5"
+    "styled-components": "^5.3.5",
+    "valid-url": "^1.0.9",
+    "video-downloader": "^1.0.4",
+    "youtube-dl-exec": "^2.1.11",
+    "youtube-validate": "^1.2.4",
+    "zustand": "^4.3.1"
   },
   "devDependencies": {
     "@babel/core": "^7.18.13",
@@ -42,5 +53,8 @@
     "eslint": "^8.22.0",
     "eslint-config-next": "12.2.5",
     "eslint-plugin-storybook": "^0.6.4"
+  },
+  "browser": {
+    "child_process": false
   }
 }
