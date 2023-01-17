@@ -15,7 +15,6 @@
     "styled-components": "^5"
   },
   "dependencies": {
-    "babel-eslint": "^10.1.0",
     "capitalize-first-letter": "^1.0.0",
     "download-url": "^2.0.3",
     "file-size": "^1.0.0",
