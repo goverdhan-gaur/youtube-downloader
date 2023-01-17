@@ -23,12 +23,7 @@ Card.propTypes = {
 
 export default function Card({content}){
   console.info(content)
-  const downloadHandle = () => {
-    saveFileByUrl(
-      content.url,
-      'hello.mp4',
-    );
-  }
+  
   return (
     <Styled.Wrapper >
       <Styled.Resolution>{content.format_note}</Styled.Resolution>
@@ -37,7 +32,7 @@ export default function Card({content}){
         fixed: 2,
         spacer: ' '
       }).human('jedec')}
-      <button onClick={downloadHandle}>Dowenload</button>
+  <a href={content.url} download="download" target="_blank">Downlload</a>
     </Styled.Wrapper>
   );
 }
