@@ -47,11 +47,8 @@ export default function SearchResults({data}) {
       </Styled.MetaContainer>
      
       <Cards data={data.formats} />
-        {/* {data.formats.map((format) =>  <Styled.Card>
-s
-                            </Styled.Card>)} */}
 
-      {/* Content goes here */}
+      <Styled.link href="/">Convert another video</Styled.link>
     </Styled.Wrapper>
   );
 }

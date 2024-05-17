@@ -23,6 +23,19 @@ export const Thumbnail = styled.img`
 
 export const MetaInfo = styled.div``;
 
+export const link = styled.a`
+    text-align: center; 
+    font-size: 30px;
+    display: block;
+    color: black;
+    margin: 50px 0;
+    cursor: pointer; 
+    transition: color 0.1s;
+    &:hover {
+        color: #202022;
+    }
+`;
+
 export const Title = styled.h1`
     font-weight: 900;
     margin-top: 0;

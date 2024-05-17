@@ -32,10 +32,10 @@ export default function Homepage({data}) {
       {
         searchData ? 
         <SearchResults data={searchData} /> : (
-        <>
+        <Styled.formGroup>
+          <Styled.Heading> Please paste the link below.</Styled.Heading>
           <Styled.Textarea autoFocus={true} name="" id="" cols="30" rows="10" onPaste={handlePaste}></Styled.Textarea>
-          <Styled.Heading> Please paste the link here.</Styled.Heading>
-        </>  
+        </Styled.formGroup>  
         )
       }
     </Styled.Wrapper>
